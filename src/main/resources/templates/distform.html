@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Satellites | Distance</title>
+</head>
+<body id="backy">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/login">Image Of The Day</a>
+        </button>
+    </div>
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+</nav>
+
+<div class="container">
+    <div>
+        <h3 style="margin-top:20px;">Distance Between Satellites(User Inputted)</h3>
+    </div>
+    <div>
+        <p>Enter the following data to find the distance between two satellites.</p>
+    </div>
+</div>
+
+<div>
+    <div>
+<form th:action="@{/distanceform}" th:object="${distanceForm}" method="post">
+    <div class="row">
+    <div id="ones" class="col-lg-6 col-md-6 col-sm-6">
+    <h6 class="rightytighty" id="satinfo">First Satellite Information: </h6>
+    <label class="rightytighty" for="satname">Satellite Name</label>
+    <p class="rightytighty"> <input type="text" id="satname" name="satellitename" autofocus="autofocus"/> </p>
+
+    <label for="inclination" class="rightytighty"><div class="myDIV">Inclination</div><div class="hide">Inclination is the angle of the orbit in relation to Earth's equator.</div></label>
+    <p class="rightytighty"><input type="text" id="inclination" name="inclination" autofocus="autofocus" required/></p>
+
+    <label for="eccentricity" class="rightytighty"><div class="myDIV">Eccentricity</div><div class="hide">Orbital eccentricity of an astronomical object is a dimensionless parameter that determines the amount by which its orbit around another body deviates from a perfect circle.</div></label>
+    <p class="rightytighty"><input type="text" id="eccentricity" name="eccentricity" autofocus="autofocus" required/></p>
+
+    <label for="meanmotion" class="rightytighty"><div class="myDIV">Mean Motion</div><div class="hide">Mean Motion is defined as the number of orbits the satellite completes about the Earth in exactly 24 hours (one solar day).</div></label>
+    <p class="rightytighty"><input type="text" id="meanmotion" name="meanmotion" autofocus="autofocus" required/></p>
+
+    <label for="meananomaly" class="rightytighty"><div class="myDIV">Mean Anomaly</div><div class="hide">Mean anomaly is the fraction of an elliptical orbit's period that has elapsed since the orbiting body passed periapsis, expressed as an angle.</div></label>
+    <p class="rightytighty"><input type="text" id="meananomaly" name="meananomaly" autofocus="autofocus" required/></p>
+
+
+        <label for="raan" class="rightytighty"><div class="myDIV">Right Ascension of the Ascending Node</div><div class="hide">The longitude of the ascending node is one of the orbital elements used to specify the orbit of an object in space. It is the angle from a specified reference direction, called the origin of longitude, to the direction of the ascending node, as measured in a specified reference plane.</div></label>
+        <p class="rightytighty"><input type="text" id="raan" name="raan" autofocus="autofocus" required/></p>
+
+
+    </div>
+
+    <div id ="twos" class="col-lg-6 col-md-6 col-sm-6">
+    <h6 id="satinfotwo" class="rightytighty">Second Satellite Information: </h6>
+    <label for="satnametwo" class="rightytighty">Satellite Name</label>
+    <p class="rightytighty"><input type="text" id="satnametwo" name="satellitenametwo" autofocus="autofocus"/> </p>
+
+    <label class="rightytighty" for="inclinationtwo"><div class="myDIV">Inclination</div><div class="hide">Inclination is the angle of the orbit in relation to Earth's equator.</div></label>
+    <p class="rightytighty"> <input type="text" id="inclinationtwo" name="inclinationtwo" autofocus="autofocus" required/></p>
+
+    <label for="eccentricitytwo" class="rightytighty"><div class="myDIV">Eccentricity</div><div class="hide">Orbital eccentricity of an astronomical object is a dimensionless parameter that determines the amount by which its orbit around another body deviates from a perfect circle.</div></label>
+    <p class="rightytighty"><input type="text" id="eccentricitytwo" name="eccentricitytwo" autofocus="autofocus" required/></p>
+
+    <label for="meanmotiontwo" class="rightytighty"><div class="myDIV">Mean Motion</div><div class="hide">Mean Motion is defined as the number of orbits the satellite completes about the Earth in exactly 24 hours (one solar day).</div></label>
+    <p class="rightytighty"><input type="text" id="meanmotiontwo" name="meanmotiontwo" autofocus="autofocus" required/></p>
+
+    <label for="meananomalytwo" class="rightytighty"><div class="myDIV">Mean Anomaly</div><div class="hide">Mean anomaly is the fraction of an elliptical orbit's period that has elapsed since the orbiting body passed periapsis, expressed as an angle.</div></label>
+    <p class="rightytighty"><input type="text" id="meananomalytwo" name="meananomalytwo" autofocus="autofocus" required/></p>
+
+        <label for="raantwo" class="rightytighty"><div class="myDIV">Right Ascension of the Ascending Node</div><div class="hide">The longitude of the ascending node is one of the orbital elements used to specify the orbit of an object in space. It is the angle from a specified reference direction, called the origin of longitude, to the direction of the ascending node, as measured in a specified reference plane.</div></label>
+        <p class="rightytighty"><input type="text" id="raantwo" name="raantwo" autofocus="autofocus" required/></p>
+
+    </div>
+
+    </div>
+
+    <p class="rightytighty"> <input type="submit" value="submit"/></p>
+
+</form>
+    </div>
+
+</div>
+
+</body>
+</html>

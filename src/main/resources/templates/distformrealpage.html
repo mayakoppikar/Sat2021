@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Satellites | Distance</title>
+</head>
+<body id="backy">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/login">Image Of The Day</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+
+
+
+</nav>
+
+
+<!--<p><span th:if="${!(disttwosats == '')}">TWO SATS</span></p>-->
+<div th:if="${!(disttwosats == '')}">
+    <div class="container">
+    <h3 style="margin-top:20px;">Distance Between Two Live Satellites:</h3>
+    <p>The distance between the satellites is: <strong><span th:text="${disttwosats}"></span> km.</strong></p>
+    </div>
+    </div>
+
+<div th:if="${(disttwosats == '')}">
+    <div class="container">
+        <h3 style="margin-top:20px;">All Satellites Within 100 kilometers...</h3>
+        <p>The following tables displays all satellites within 100 km of the selected satellite. The first column displays the distance, the second- the chosen satellite's name, and the third- the second satellite's name.</p>
+    </div>
+<div class="container">
+    <table th:if="${(disttwosats == '')}" style="width:100%">
+        <tr>
+            <th>Distance (km)</th>
+            <th>Satellite One Name</th>
+            <th>Satellite Two Name</th>
+        </tr>
+        <tr th:each="distone: ${distone}">
+            <td th:text="${distone.dist}" />
+            <td th:text="${distone.sonename}" />
+            <td th:text="${distone.stwoname}" />
+        </tr>
+
+
+
+    </table>
+</div>
+</div>
+
+</body>
+</html>

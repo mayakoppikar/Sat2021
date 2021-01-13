@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Satellites | Data</title>
+</head>
+</head>
+<body id="backy">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/login">Image Of The Day</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+
+
+
+</nav>
+
+
+
+
+<div class="container">
+    <h4 ID="inf">Information: </h4>
+    <div class="row">
+
+
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+
+
+            <p class="tab"><strong>Inclination: </strong><span th:text="${inclination}"></span> °</p>
+            <p class="tab"> <strong>Eccentricity:</strong> <span th:text="${eccentricity}"></span></p>
+            <p class="tab"><strong>Mean Motion: </strong><span th:text="${meanmotion}"></span> rev/day</p>
+            <p class="tab"><strong>Mean Anomaly: </strong> <span th:text="${meananomaly}"></span> °</p>
+
+
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+<!--<p th:text="${inclin}"></p>-->
+
+<div class="container">
+    <div>
+        <h4>Predicting Satellite Location</h4>
+    </div>
+    <table class="bo" style="width:100%">
+        <tr class="bo">
+            <th class="bo">Time</th>
+            <th class="bo">Location</th>
+            <th class="bo">Ecliptic Coordinates [x,y,z]</th>
+
+        </tr>
+        <tr class="bo">
+            <td class="bo">1 hr. from now</td>
+            <td class="bo"><p><span th:text="${radatonehourahead}"></span> m</p></td>
+            <td class="bo"><p><span th:text="${onehouraheadcoordinates}"></span></p></td>
+
+
+        </tr>
+        <tr class="bo">
+            <td class="bo">2 hr. from now</td>
+            <td class="bo"><p><span th:text="${radtwohourahead}"></span> m</p></td>
+            <td class="bo"><p><span th:text="${twohouraheadcoordinates}"></span></p></td>
+
+
+        </tr>
+        <tr class="bo">
+            <td class="bo">5 hr. from now</td>
+            <td class="bo"><p><span th:text="${radfivehourahead}"></span> m</p></td>
+            <td class="bo"><p><span th:text="${fivehouraheadcoordinates}"></span></p></td>
+
+        </tr>
+        <tr class="bo">
+            <td class="bo">24 hr. from now</td>
+            <td class="bo"><p><span th:text="${rad24hourahead}"></span> m</p></td>
+            <td class="bo"><p><span th:text="${twentyfourhouraheadcoordinates}"></span></p></td>
+
+
+        </tr>
+        <tr class="bo">
+            <td class="bo">1 hr. ago</td>
+            <td class="bo"><p><span th:text="${rad1hourbehind}"></span> m</p></td>
+            <td class="bo"><p><span th:text="${onehourbehindcoordinates}"></span></p></td>
+
+        </tr>
+
+    </table>
+
+</div>
+
+
+<div class="container">
+    <h4 id="soi">Satellite Orbit Information: </h4>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+
+
+            <p class="tab"><strong>Semi-Major Axis(a) Length: </strong><span th:text="${a}"></span> km</p>
+            <p class="tab"><strong>P-Value: </strong><span th:text="${p}"></span> km</p>
+            <p class="tab"><strong>B-Value: </strong><span th:text="${b}"></span> km</p>
+            <p class="tab"><strong>Height-Value(h): </strong><span th:text="${h}"></span> km</p>
+            <p class="tab"><strong>Distance from Earth to Apogee: </strong><span th:text="${disttoapogee}"></span> km</p>
+            <p class="tab"><strong>Distance from Earth to Perigee: </strong><span th:text="${disttoperigee}"></span> km</p>
+
+
+            <p>---------------------------------------------</p>
+            <p class="tab"><strong>Orbit Equation: </strong><span th:text="${equation}"></span></p>
+
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+            <canvas id="Canvas" width="200" height="200"></canvas>
+            <script th:inline="javascript">
+var canvass = document.getElementById('Canvas');
+var ctx = canvass.getContext("2d");
+ctx.fillStyle = "#FFFFFF";
+ctx.fillRect(0, 0, 200, 200);
+
+var a = [[${a}]];
+var b = [[${b}]];
+var i = [[${inclination}]];
+
+ctx.beginPath();
+ctx.ellipse(100, 100, ((a/2)/100000) , (b/100), i, 0, 2 * Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(100, 100, 3, 0, 2 * Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.setLineDash([5, 15]);
+ctx.moveTo(0, 50);
+ctx.lineTo(300, 50);
+ctx.stroke();
+
+
+
+</script>
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+<div class="container">
+    <h4 id="satmot">Satellite Motion: </h4>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+            <p class="tab"><strong>Velocity at Apogee: </strong><span th:text="${vatapogee}"></span> m/s</p>
+            <p class="tab"><strong>Velocity at Perigee: </strong><span th:text="${vatperigee}"></span> m/s</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <a href="/satellites">Find Another Satellite!</a>
+</div>
+
+
+</body>
+</html>

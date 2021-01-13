@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="stylesheet" type="text/js" href="/js/custom.js"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+
+    <title>Satellites | Images</title>
+</head>
+
+<body id="backy">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/login">Image Of The Day</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calcuations.html">Calculations</a>
+        </button>
+    </div>
+
+
+</nav>
+
+
+
+
+
+<div class="container">
+
+
+<h2 id="iotd">Image of the Day: Part One</h2>
+<p>Enter the values for each field to find the satellite image from that day! And More!</p>
+
+<form th:action="@{/login}" th:object="${loginForm}" method="post">
+    <label for="year">Year</label>
+    <p><input type="text" id="year" name="year" autofocus="autofocus" required/> </p>
+
+    <label for="month">Month</label>
+    <p> <input type="text" id="month" name="month" autofocus="autofocus" required/></p>
+
+    <label for="day">Day</label>
+    <p><input type="text" id="day" name="day" autofocus="autofocus" required/></p>
+
+    <p> <input type="submit" value="submit"/></p>
+
+</form>
+
+</div>
+
+
+
+</body>
+</html>

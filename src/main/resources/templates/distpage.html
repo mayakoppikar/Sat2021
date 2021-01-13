@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Satellites | Distance </title>
+</head>
+<body id="backy">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/login">Image Of The Day</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+
+
+</nav>
+
+
+<div class="container">
+    <div id="finaldist">
+<p id = "te"><strong>The distance between these satellites is: </strong><span th:text="${distance}"></span> m</p>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div>
+        <h6>Predicting Satellite Location</h6>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+            <h4>Satellite One:</h4>
+            <table class="bo" style="width:100%">
+                <tr class="bo">
+                    <th class="bo">Time</th>
+                    <th class="bo">Location</th>
+                    <th class="bo">Ecliptic Coordinates [x,y,z]</th>
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">1 hr. from now</td>
+                    <td class="bo"><p><span th:text="${radatonehourahead}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${onehouraheadcoordinates}"></span></p></td>
+
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">2 hr. from now</td>
+                    <td class="bo"><p><span th:text="${radtwohourahead}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${twohouraheadcoordinates}"></span></p></td>
+
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">5 hr. from now</td>
+                    <td class="bo"><p><span th:text="${radfivehourahead}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${fivehouraheadcoordinates}"></span></p></td>
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">24 hr. from now</td>
+                    <td class="bo"><p><span th:text="${rad24hourahead}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${twentyfourhouraheadcoordinates}"></span></p></td>
+
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">1 hr. ago</td>
+                    <td class="bo"><p><span th:text="${rad1hourbehind}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${onehourbehindcoordinates}"></span></p></td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+            <h6>Satellite Two:</h6>
+            <table class="bo" style="width:100%">
+                <tr class="bo">
+                    <th class="bo">Time</th>
+                    <th class="bo">Location</th>
+                    <th class="bo">Ecliptic Coordinates [x,y,z]</th>
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">1 hr. from now</td>
+                    <td class="bo"><p><span th:text="${radatonehouraheadtwo}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${onehouraheadcoordinatestwo}"></span></p></td>
+
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">2 hr. from now</td>
+                    <td class="bo"><p><span th:text="${radtwohouraheadtwo}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${twohouraheadcoordinatestwo}"></span></p></td>
+
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">5 hr. from now</td>
+                    <td class="bo"><p><span th:text="${radfivehouraheadtwo}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${fivehouraheadcoordinatestwo}"></span></p></td>
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">24 hr. from now</td>
+                    <td class="bo"><p><span th:text="${rad24houraheadtwo}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${twentyfourhouraheadcoordinatestwo}"></span></p></td>
+
+
+                </tr>
+                <tr class="bo">
+                    <td class="bo">1 hr. ago</td>
+                    <td class="bo"><p><span th:text="${rad1hourbehindtwo}"></span> m</p></td>
+                    <td class="bo"><p><span th:text="${onehourbehindcoordinatestwo}"></span></p></td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <a href="/distanceform">Click here to find another distance!</a>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h4 ID="inf">Information: </h4>
+    <div class="row">
+
+
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+            <h6 class="tab">Satellite One: </h6>
+
+<!--            <p>Satellite Name: <span th:text="${satname}"></span></p>-->
+            <p class="tab"><strong>Inclination: </strong><span th:text="${inclin}"></span> °</p>
+            <p class="tab"> <strong>Eccentricity:</strong> <span th:text="${eccen}"></span></p>
+            <p class="tab"><strong>Mean Motion: </strong><span th:text="${meanMot}"></span> rev/day</p>
+            <p class="tab"><strong>Mean Anomaly: </strong> <span th:text="${meanAnom}"></span> °</p>
+
+
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+            <h6 class="tab">Satellite Two: </h6>
+<!--            <p>Satellite Name: <span th:text="${satnametwo}"></span></p>-->
+            <p class="tab"><strong>Inclination:</strong> <span th:text="${inclintwo}"></span> °</p>
+            <p class="tab"><strong>Eccentricity:</strong> <span th:text="${eccentwo}"></span></p>
+            <p class="tab"><strong>Mean Motion: </strong><span th:text="${meanMottwo}"></span> rev/day</p>
+            <p class="tab"><strong>Mean Anomaly: </strong><span th:text="${meanAnomtwo}"></span> °</p>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+<!--<p th:text="${inclin}"></p>-->
+
+
+<div class="container">
+    <h4 id="soi">Satellite Orbit Information: </h4>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+            <h6 class="tab">Satellite One: </h6>
+
+<!--            <p>Semi-Major Axis (a) Length: <span th:text="${satonesemimajora}"></span></p>-->
+            <p class="tab"><strong>Semi-Major Axis(a) Length: </strong><span th:text="${a}"></span> km</p>
+            <p class="tab"><strong>P-Value: </strong><span th:text="${pone}"></span> km</p>
+            <p class="tab"><strong>B-Value: </strong><span th:text="${bone}"></span> km</p>
+            <p class="tab"><strong>Height-Value(h): </strong><span th:text="${hone}"></span> km</p>
+            <p class="tab"><strong>Distance from Earth to Apogee: </strong><span th:text="${apogeeone}"></span> km</p>
+            <p class="tab"><strong>Distance from Earth to Perigee: </strong><span th:text="${perone}"></span> km</p>
+
+
+            <p>---------------------------------------------</p>
+            <p class="tab"><strong>Orbit Equation: </strong><span th:text="${equaone}"></span></p>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+            <h6 class="tab">Satellite Two: </h6>
+            <p class="tab"><strong>Semi-Major Axis(a) Length: </strong><span th:text="${atwo}"></span> km</p>
+            <p class="tab"><strong>P-Value: </strong><span th:text="${ptwo}"></span></p>
+            <p class="tab"><strong>B-Value: </strong><span th:text="${btwo}"></span> km</p>
+            <p class="tab"><strong>Height-Value(h):</strong> <span th:text="${htwo}"></span> km</p>
+            <p class="tab"><strong>Distance from Earth to Apogee: </strong><span th:text="${apogeetwo}"></span> km</p>
+
+            <p class="tab"><strong>Distance from Earth to Perigee: </strong><span th:text="${pertwo}"></span> km</p>
+
+
+
+
+            <p>-----------------------------------------</p>
+            <p class="tab"><strong>Orbit Equation: </strong><span th:text="${equatwo}"></span></p>
+
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+    </div>
+
+
+
+<div class="container">
+    <h4 id="satmot">Satellite Motion: </h4>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+            <h6 class="tab">Satellite One: </h6>
+            <p class="tab"><strong>Velocity at Apogee: </strong><span th:text="${onevatapogee}"></span> m/s</p>
+            <p class="tab"><strong>Velocity at Perigee: </strong><span th:text="${onevatperigee}"></span> m/s</p>
+
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+            <h6 class="tab">Satellite Two: </h6>
+            <p class="tab"><strong>Velocity at Apogee: </strong><span th:text="${twova}"></span></p>
+            <p class="tab"><strong>Velocity at Perigee: </strong><span th:text="${twovp}"></span></p>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div class="row">
+
+
+
+    <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+
+
+        <canvas id="VelocityRealCanvasOne" width="380" height="200"></canvas>
+        <script th:inline="javascript">
+var canvass = document.getElementById('VelocityRealCanvasOne');
+var ctxs = canvass.getContext("2d");
+ctxs.fillStyle = "#FFFFFF";
+ctxs.fillRect(0, 0, 380, 200);
+
+
+ctxs.beginPath();
+ctxs.moveTo(20, 00);
+ctxs.lineTo(20, 200);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(0, 100);
+ctxs.lineTo(380, 100);
+ctxs.stroke();
+
+
+var apogeelength = [[${apogeetwo}]];
+var apogee = apogeelength/100000;
+var apogeesplit = apogee/10;
+
+
+
+
+var apogs0 = [[${apogs0}]];
+var apogs1 = [[${apogs1}]];
+var apogs2 = [[${apogs2}]];
+var apogs3 = [[${apogs3}]];
+var apogs4 = [[${apogs4}]];
+var apogs5 = [[${apogs5}]];
+var apogs6 = [[${apogs6}]];
+var apogs7 = [[${apogs7}]];
+var apogs8 = [[${apogs8}]];
+var apogs9 = [[${apogs9}]];
+
+var vatperigee = [[${twovp}]];
+
+
+
+ctxs.beginPath();
+ctxs.lineTo(20, 100 - (apogs1/1000));
+ctxs.lineTo(40, 100 - (apogs2/1000));
+ctxs.lineTo(60, 100 - (apogs3/1000));
+ctxs.lineTo(80, 100 - (apogs4/1000));
+ctxs.lineTo(100, 100 - (apogs5/1000));
+ctxs.lineTo(120, 100 - (apogs6/1000));
+ctxs.lineTo(140, 100 - (apogs7/1000));
+ctxs.lineTo(160, 100 - (apogs8/1000));
+ctxs.lineTo(180, 100 - (apogs9/1000));
+ctxs.lineTo(190, 100 - (apogs9/1000));
+ctxs.lineTo(200, 100 - (apogs9/1000));
+ctxs.lineTo(220, 100 - (apogs8/1000));
+ctxs.lineTo(240, 100 - (apogs7/1000));
+ctxs.lineTo(260, 100 - (apogs6/1000));
+ctxs.lineTo(280, 100 - (apogs5/1000));
+ctxs.lineTo(300, 100 - (apogs4/1000));
+ctxs.lineTo(320, 100 - (apogs3/1000));
+ctxs.lineTo(340, 100 - (apogs2/1000));
+ctxs.lineTo(360, 100 - (apogs1/1000));
+ctxs.moveTo(380, 100 - (apogs0/1000));
+ctxs.stroke();
+
+
+
+ctxs.beginPath();
+ctxs.moveTo(40, 97);
+ctxs.lineTo(40, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(60, 97);
+ctxs.lineTo(60, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(80, 97);
+ctxs.lineTo(80, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(100, 97);
+ctxs.lineTo(100, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(120, 97);
+ctxs.lineTo(120, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(140, 97);
+ctxs.lineTo(140, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(160, 97);
+ctxs.lineTo(160, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(180, 97);
+ctxs.lineTo(180, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(200, 97);
+ctxs.lineTo(200, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(220, 97);
+ctxs.lineTo(220, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(240, 97);
+ctxs.lineTo(240, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(260, 97);
+ctxs.lineTo(260, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(280, 97);
+ctxs.lineTo(280, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(300, 97);
+ctxs.lineTo(300, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(320, 97);
+ctxs.lineTo(320, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(340, 97);
+ctxs.lineTo(340, 103);
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.moveTo(360, 97);
+ctxs.lineTo(360, 103);
+ctxs.stroke();
+
+
+
+ctxs.beginPath();
+ctxs.arc(20, 100 - (apogs1/1000), 2, 0, 2 * Math.PI);
+ctxs.fill();
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.arc(360, 100 - (apogs1/1000), 2, 0, 2 * Math.PI);
+ctxs.fill();
+ctxs.stroke();
+
+ctxs.beginPath();
+ctxs.arc(190, 100 - (apogs9/1000), 2, 0, 2 * Math.PI);
+ctxs.fill();
+ctxs.stroke();
+
+
+
+ctxs.beginPath();
+canvas_arrow(ctxs, 120, (100 - (apogs1/1000)), 40, 100 - (apogs1/1000) );
+ctxs.stroke();
+
+ctxs.beginPath();
+canvas_arrow(ctxs, 280, (100 - (apogs1/1000)), 350, 100 - (apogs1/1000) );
+ctxs.stroke();
+
+ctxs.beginPath();
+canvas_arrow(ctxs, 190, 150, 190, 100 - (apogs9/1000) + 10);
+ctxs.stroke();
+
+
+
+ctxs.font = "15px Arial";
+ctxs.fillStyle = "black";
+ctxs.fillText("Velocity vs. Radius Graph- Satellite One", 80, 20);
+
+ctxs.font = "15px Arial";
+ctxs.fillStyle = "red";
+ctxs.fillText("Velocity at Apogee", 180, 165);
+
+ctxs.font = "15px Arial";
+ctxs.fillStyle = "red";
+ctxs.fillText("Velocity at Perigee", 140, (100 - (apogs1/1000)));
+
+
+
+
+function canvas_arrow(context, fromx, fromy, tox, toy) {
+  var headlen = 10; // length of head in pixels
+  var dx = tox - fromx;
+  var dy = toy - fromy;
+  var angle = Math.atan2(dy, dx);
+  context.moveTo(fromx, fromy);
+  context.lineTo(tox, toy);
+  context.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+  context.moveTo(tox, toy);
+  context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+}
+
+
+</script>
+
+
+
+
+    </div>
+
+
+    <div class="col-lg-4 col-md-6 col-sm-6 ">
+
+        <canvas id="VelocityRealCanvasTwo" width="380" height="200"></canvas>
+        <script th:inline="javascript">
+var canvass = document.getElementById('VelocityRealCanvasTwo');
+var ctx = canvass.getContext("2d");
+ctx.fillStyle = "#FFFFFF";
+ctx.fillRect(0, 0, 380, 200);
+
+ctx.beginPath();
+ctx.moveTo(20, 00);
+ctx.lineTo(20, 200);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(0, 100);
+ctx.lineTo(380, 100);
+ctx.stroke();
+
+var apogeelength = [[${disttoapogee}]];
+var apogee = apogeelength/100000;
+var apogeesplit = apogee/10;
+
+
+var apog0 = [[${apog0}]];
+var apog1 = [[${apog1}]];
+var apog2 = [[${apog2}]];
+var apog3 = [[${apog3}]];
+var apog4 = [[${apog4}]];
+var apog5 = [[${apog5}]];
+var apog6 = [[${apog6}]];
+var apog7 = [[${apog7}]];
+var apog8 = [[${apog8}]];
+var apog9 = [[${apog9}]];
+
+var vatperigee = [[${vatperigee}]];
+
+ctx.beginPath();
+ctx.moveTo(0, 100 - (apog0/1000));
+ctx.lineTo(20, 100 - (apog1/1000));
+ctx.lineTo(40, 100 - (apog2/1000));
+ctx.lineTo(60, 100 - (apog3/1000));
+ctx.lineTo(80, 100 - (apog4/1000));
+ctx.lineTo(100, 100 - (apog5/1000));
+ctx.lineTo(120, 100 - (apog6/1000));
+ctx.lineTo(140, 100 - (apog7/1000));
+ctx.lineTo(160, 100 - (apog8/1000));
+ctx.lineTo(180, 100 - (apog9/1000));
+ctx.lineTo(190, 100 - (apog9/1000));
+ctx.lineTo(200, 100 - (apog9/1000));
+ctx.lineTo(220, 100 - (apog8/1000));
+ctx.lineTo(240, 100 - (apog7/1000));
+ctx.lineTo(260, 100 - (apog6/1000));
+ctx.lineTo(280, 100 - (apog5/1000));
+ctx.lineTo(300, 100 - (apog4/1000));
+ctx.lineTo(320, 100 - (apog3/1000));
+ctx.lineTo(340, 100 - (apog2/1000));
+ctx.lineTo(360, 100 - (apog1/1000));
+ctx.moveTo(380, 100 - (apog0/1000));
+
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(40, 97);
+ctx.lineTo(40, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(60, 97);
+ctx.lineTo(60, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(80, 97);
+ctx.lineTo(80, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(100, 97);
+ctx.lineTo(100, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(120, 97);
+ctx.lineTo(120, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(140, 97);
+ctx.lineTo(140, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(160, 97);
+ctx.lineTo(160, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(180, 97);
+ctx.lineTo(180, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(200, 97);
+ctx.lineTo(200, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(220, 97);
+ctx.lineTo(220, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(240, 97);
+ctx.lineTo(240, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(260, 97);
+ctx.lineTo(260, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(280, 97);
+ctx.lineTo(280, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(300, 97);
+ctx.lineTo(300, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(320, 97);
+ctx.lineTo(320, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(340, 97);
+ctx.lineTo(340, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(360, 97);
+ctx.lineTo(360, 103);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(20, 100 - (apog1/1000), 2, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(360, 100 - (apog1/1000), 2, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(190, 100 - (apog9/1000), 2, 0, 2 * Math.PI);
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+canvas_arrow(ctx, 120, (100 - (apog1/1000)), 30, 100 - (apog1/1000) );
+ctx.stroke();
+
+ctx.beginPath();
+canvas_arrow(ctx, 280, (100 - (apog1/1000)), 350, 100 - (apog1/1000) );
+ctx.stroke();
+
+ctx.beginPath();
+canvas_arrow(ctx, 190, 150, 190, 100 - (apog9/1000) + 10);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(0, 100);
+ctx.lineTo(380, 100);
+ctx.stroke();
+
+ctx.font = "15px Arial";
+ctx.fillStyle = "black";
+ctx.fillText("Velocity vs. Radius Graph- Satellite Two", 80, 20);
+
+ctx.font = "15px Arial";
+ctx.fillStyle = "red";
+ctx.fillText("Velocity at Apogee", 180, 165);
+
+ctx.font = "15px Arial";
+ctx.fillStyle = "red";
+ctx.fillText("Velocity at Perigee", 140, (100 - (apog1/1000)));
+
+function canvas_arrow(context, fromx, fromy, tox, toy) {
+  var headlen = 10; // length of head in pixels
+  var dx = tox - fromx;
+  var dy = toy - fromy;
+  var angle = Math.atan2(dy, dx);
+  context.moveTo(fromx, fromy);
+  context.lineTo(tox, toy);
+  context.lineTo(tox - headlen * Math.cos(angle - Math.PI / 6), toy - headlen * Math.sin(angle - Math.PI / 6));
+  context.moveTo(tox, toy);
+  context.lineTo(tox - headlen * Math.cos(angle + Math.PI / 6), toy - headlen * Math.sin(angle + Math.PI / 6));
+}
+
+</script>
+
+
+
+    </div>
+
+
+</div>
+
+</body>
+</html>

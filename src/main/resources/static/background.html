@@ -1,0 +1,206 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Satellites | Background Info </title>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- metadata -->
+    <meta charset="utf-8"/>
+
+
+</head>
+<body id="backy">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/login">Image Of The Day</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+
+</nav>
+
+
+<div id="info" class="container">
+    <div>
+        <h2 id="binfo">Background Information</h2>
+        <h6>Formulas, summaries, and more!</h6>
+    </div>
+
+
+</div>
+
+<div class="row container">
+
+
+    <div class="col-lg-12 col-md-6 col-sm-6">
+        <div class="jumb">
+
+            <p><strong class = "titles">What are the different kinds of satellites?</strong> There are 2 main types of satellites: man-made and natural. Satellites are not always man-made, they can be celestial bodies that revolve around another bodys. (Example: the moon revolves around the Earth). Man made satellites can be classified by their function. There are several kinds: communications, remote sensing, navigation, drone, ground, polar, and others. Communications satellites recieve data and relay them back to Earth, for our use. Remote sensing satellites collect data about a specific object.</p>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-6 col-sm-6">
+        <div class="jumb">
+            <p><strong>Satellite Orbit:</strong> Satellites orbit the Earth, and other celestial bodies, in a range of shapes. The orbit can range from a perfect circle to a long, flat ellipse. Knowing the equations of ellipses can be useful in visualizing a satellite's orbit. </p>
+
+            <img src="https://o.quizlet.com/JCApXTj-7iYeovmhfii8Rg_b.png" height="200px" width="300px" id="ims">
+
+
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-6 col-sm-6">
+        <div class="jumb">
+
+            <p><strong class="titles">What are the keplerian elements?</strong> Orbital elements are the parameters required to uniquely identify a specific orbit. In celestial mechanics these elements are considered in two-body systems using a Kepler orbit.</p>
+                <h6><strong>Keplerian Elements:</strong></h6>
+            <ul>
+                <li><strong>Epoch Time-</strong>A timestamp at which to measure when the orbital elements were recorded.</li>
+                <li><strong>Orbital Inclination-</strong>Inclination is the angle of the orbit in relation to Earth's equator.</li>
+                <li><strong>Right Ascension of the Right Node-</strong>The ascending node is the place where the satellite crosses the equator while going from the Southern Hemisphere to the Northern Hemisphere. Now since the Earth rotates, you need to specify a fixed object in space. We use Aries (this is also the same location as the vernal equinox). The angle, from the center of the Earth, between Aries and the ascending node is called the right ascension of ascending node.</li>
+                <li><strong>Eccentricity-</strong>Orbital eccentricity of an astronomical object is a dimensionless parameter that determines the amount by which its orbit around another body deviates from a perfect circle.</li>
+                <li><strong>Argument of Perigee-</strong>The point where the satellite is the closest to the Earth is called the perigee. The argument of perigee is the angle formed between the perigee and the ascending node. If the perigee would occur at the ascending node, the argument of perigee would be 0.</li>
+                <li><strong>Mean Motion-</strong>Mean Motion is defined as the number of orbits the satellite completes about the Earth in exactly 24 hours (one solar day).</li>
+                <li><strong>Mean Anomaly-</strong>Mean anomaly is the fraction of an elliptical orbit's period that has elapsed since the orbiting body passed periapsis, expressed as an angle.</li>
+                <li><strong>Drag-</strong>If the satellite were in a low orbit, then the atmosphere would produce drag. This would cause the satellite to come closer to the Earth therefore speeding up (Kepler's Law).</li>
+            </ul>
+        </div>
+        <img src="https://www.narom.no/wp-content/uploads/2016/10/apoapsis_periapsis.png" height="200px" width="300px" id="im">
+    </div>
+
+
+
+
+<div class="container">
+<div>
+    <h4>Equations: </h4>
+</div>
+    <table style="width:100%">
+        <tr class="bor">
+            <th class="bor">Equation</th>
+            <th class="bor">Objective</th>
+        </tr>
+        <tr class="bor">
+            <td class="bor">a = (∛μ)/((2πn/86400)^2/3)</td>
+            <td class="bor">This equation can be used to find the semi-major axis length of the satellite's orbit. Variables: μ is a constant which equals 3.986004418 * 10^14, n equals the satellite's mean motion in rev/day.</td>
+        </tr>
+        <tr class="bor">
+            <td class="bor">p = a - a(e^2)</td>
+            <td class="bor">This equation can be used to find the satellites p-value, the distance from the focus(Earth) to the ellipse's diretrix line. Variables: a is the semi-major axis length, e is the eccentricity.</td>
+        </tr>
+        <tr class="bor hlights">
+            <td class="bor hlights">IF ECCENTRICITY IS BETWEEN 0 & 1:</td>
+            <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
+        </tr>
+
+        <tr class="bor">
+            <td class="bor"> h = (p(e^2))/(1-(e^2))</td>
+            <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value, e is the eccentricity.</td>
+        </tr>
+        <tr class="bor">
+            <td class="bor">b = (ep)/(√1 - (e^2))</td>
+            <td class="bor">The b-value of the satellite's orbit is also called the semi-minor axis. Variables: e is the eccentricity, p is the p-value.</td>
+        </tr>
+
+        <tr class="bor hlights">
+            <td class="bor hlights">IF ECCENTRICITY IS 1:</td>
+            <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
+        </tr>
+
+        <tr class="bor">
+            <td class="bor"> h = -p/2</td>
+            <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value.</td>
+        </tr>
+        <tr class="bor hlights">
+            <td class="bor hlights">IF ECCENTRICITY IS ABOVE 1:</td>
+            <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
+        </tr>
+
+        <tr class="bor">
+            <td class="bor"> h = (p(e^2))/(1-(e^2))</td>
+            <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value, e is the eccentricity.</td>
+        </tr>
+        <tr class="bor">
+            <td class="bor">b = (ep)/(√(e^2) -1)</td>
+            <td class="bor">The b-value of the satellite's orbit is also called the semi-minor axis. Variables: e is the eccentricity, p is the p-value.</td>
+        </tr>
+
+
+        <tr class="bor">
+            <td class="bor"> r = (ep)/(1-cosθ)</td>
+            <td class="bor">This equation can be used to find the radius from the center of the Earth to the satellite. The variables: e is the eccentricity, p is the p-value, θ is the angle between the satellite and perigee.</td>
+        </tr>
+        <tr class="bor">
+            <td class="bor"> v = √(G - M((2/r) - (1/a))</td>
+            <td class="bor">This equation can be used to find the satellite's velocity at a given radius. The r value is the radius, a is the semi-major axis length, M is the Earth's mass, and G is a gravitational constant. G = .0000000000667</td>
+        </tr>
+        <tr class="bor">
+            <td class="bor">A = a(1 + e)</td>
+            <td class="bor">This equation will find the A value which equals the distance from the center of the Earth to the apogee. Variables: a is the semi-major axis length, e is the eccentricity.</td>
+        </tr>
+        <tr class="bor">
+            <td class="bor">P = a(1 - e)</td>
+            <td class="bor">This equation will find the P value which equals the distance from the center of the Earth to the perigee. Variables: a is the semi-major axis length, e is the eccentricity.</td>
+        </tr>
+    </table>
+
+</div>
+
+</div>
+<!-- links -->
+
+<p id = "rl" class = "faq">Related Links:</p>
+
+<div>
+    <a class="o" href= "https://www.amsat.org/amsat/articles/houston-net/kep.html" class = "faq">Click Here to Learn More About Orbital Elements</a>
+</div>
+
+<div>
+    <a class="o" href= "https://faculty.virginia.edu/skrutskie/ASTR1210/notes/orbeq.html" class = "faq">Click Here to Learn More About Orbital Equations</a>
+</div>
+
+<div>
+    <a class="o" href= "https://earthobservatory.nasa.gov/features/OrbitsCatalog#:~:text=There%20are%20essentially%20three%20types,farthest%20away%20from%20the%20surface." class = "faq">Click Here to Learn More About The Types of Orbits</a>
+</div>
+
+<div>
+    <a class="o" href= "https://www.nasa.gov/audience/forstudents/k-4/stories/nasa-knows/what-is-a-satellite-k4.html" class = "faq">Click Here to Learn More About Satellites</a>
+</div>
+
+
+
+
+
+</body>
+</html>

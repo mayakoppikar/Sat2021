@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Satellites | Library</title>
+</head>
+<body id="backy">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/login">Image Of The Day</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+
+</nav>
+
+
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" style="color:black;">Satellite Library</h1>
+            <p style="color:black;">Filter Your Search:</p>
+            <form action="/satlibrary" method="get">
+
+          <p><label style="color:black;" for="alphabeticorder">Alphabetic Order-</label>
+            <input style="color:black;" type="checkbox" name="alphabeticorder" value="true" id="alphabeticorder">
+          </p>
+
+              <p> <label style="color:black;" for="altitudezone">Altitude Zone-</label>
+                <select style="color:black;" id="altitudezone" name="altitudezone">
+                    <option style="color:black;" value="-">-</option>
+                    <option style="color:black;" value="LEO">Low Earth Orbit(180-2000 km)</option>
+                    <option style="color:black;"value="MEO">Mid Earth Orbit(2000-35780 km)</option>
+                    <option style="color:black;"value="GEO">High Earth/Geosynchronous Orbit(35780+ km)</option>
+                </select>
+              </p>
+                <p>
+                <input type="submit" name="submitfilter" id="submitfilter">
+                </p>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+<table style="width:100%">
+    <tr>
+        <th>Satellite Name</th>
+        <th>Satellite ID</th>
+        <th>Mean Motion    <div class="myDIV">&#x25D5;</div><div class="hide">Satellite's motion in revolutions per day.</div>
+        </th>
+        <th>Eccentricity    <div class="myDIV">&#x25D5;</div><div class="hide">Determines how much the satellite's orbit deviates from  a perfect circle.</div>
+        </th>
+        <th>Inclination    <div class="myDIV">&#x25D5;</div><div class="hide">Angle between the orbital and equatorial plane.</div>
+        </th>
+        <th>NORAD ID    <div class="myDIV">&#x25D5;</div><div class="hide">NORAD Catalog Number</div>
+        </th>
+        <th>More Information</th>
+    </tr>
+    <tr th:each="sat: ${sats}">
+        <td th:text="${sat.objname}" />
+        <td th:text="${sat.objid}" />
+        <td th:text="${sat.meanmot}" />
+        <td th:text="${sat.eccentricity}" />
+        <td th:text="${sat.inclin}" />
+        <td th:text="${sat.noradid}"/>
+        <td><a th:href="@{/satlib/{satid}(satid = ${sat.noradid})}">Go</a>
+        </td>
+
+
+
+</table>
+
+
+
+
+</div>
+
+
+
+</body>
+</html>
