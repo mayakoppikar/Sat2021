@@ -26,7 +26,6 @@ public class SatelliteRealData {
           HttpsURLConnection urlConnection = (HttpsURLConnection) new URL(url).openConnection();
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode rootNode = objectMapper.readTree(urlConnection.getInputStream());
-        System.out.println(rootNode);
         Iterator<JsonNode> albums = rootNode.path("").iterator();
 
 
@@ -38,7 +37,6 @@ public class SatelliteRealData {
 
 
             JsonNode album = albums.next();
-//            System.out.println("Satellite ID: " + album.path("satelliteId") + " Name: " + album.path("name") + " Line 1: " + album.path("line1") + " Line 2: " + album.path("line2"));
 
             sats.add(String.valueOf(album.path("satelliteId")));
             sats.add(String.valueOf(album.path("name")));
@@ -77,7 +75,6 @@ public class SatelliteRealData {
         Iterator<JsonNode> albums = rootNode.iterator();
 
         while(albums.hasNext()){
-            System.out.println("MEWO");
         }
 
         ArrayList<String> sats = new ArrayList<String>();

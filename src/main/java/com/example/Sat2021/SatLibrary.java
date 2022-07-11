@@ -168,8 +168,6 @@ filteredsats.add(new com.example.Sat2021.sat(sats.get(i).objname, sats.get(i).ob
         String coordinatenow = com.example.Sat2021.Satellites.getCoordinate(x1now,y1now, z1now);
 
 
-        System.out.println(coordinatenow);
-        System.out.println(radnow);
 
         //one hour from now:
 //find mean anomaly
@@ -187,10 +185,6 @@ filteredsats.add(new com.example.Sat2021.sat(sats.get(i).objname, sats.get(i).ob
 
         String coordinateper = com.example.Sat2021.Satellites.getCoordinate(x1per,y1per, z1per);
 
-
-
-        System.out.println(coordinateper);
-        System.out.println(radper);
 
 //one hour from now:
 //find mean anomaly

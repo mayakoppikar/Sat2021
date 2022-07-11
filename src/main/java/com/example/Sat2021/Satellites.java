@@ -61,8 +61,6 @@ public class Satellites {
         } else if (this.eccentricity > 1) {
             this.heightHValue = findHeightH(this.eccentricity, this.pValue);
             this.bValue = findBValScenarioTwo(this.eccentricity, this.pValue);
-        } else {
-            System.out.println("INVALID!!!!!!!!!!!!!!!!!!!!!!!");
         }
 
         this.distEearthToApogee = findAdistEarthToApogee(this.semiMajorAxisA, this.eccentricity);

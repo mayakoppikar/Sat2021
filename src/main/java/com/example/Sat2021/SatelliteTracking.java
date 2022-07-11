@@ -76,9 +76,6 @@ public class SatelliteTracking {
         ArrayList<DistFormSats> MeoNow = checkNow(meos);
         ArrayList<DistFormSats> GeoNow = checkNow(geos);
 
-        System.out.println("LEO: " + LeoNow.size());
-        System.out.println("MEO: " + MeoNow.size());
-        System.out.println("GEO: " + GeoNow.size());
 
 
         model.addAttribute("LEO", LeoNow);

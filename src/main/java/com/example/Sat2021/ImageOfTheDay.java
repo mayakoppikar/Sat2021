@@ -17,21 +17,18 @@ public class ImageOfTheDay {
 
     public static String getYear() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter year: ");
         String month = in.nextLine();
         return month;
     }
 
     public static String getMonth() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter month Number: ");
         String month = in.nextLine();
         return month;
     }
 
     public static String getDay() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Enter day: ");
         String day = in.nextLine();
         return day;
     }
@@ -51,7 +48,6 @@ public class ImageOfTheDay {
 
 
         LocalDate now = LocalDate.now();
-        System.out.println(now.toString());
 
 
         int currentyear = now.getYear();
@@ -65,7 +61,6 @@ public class ImageOfTheDay {
 
         String gurll  = rootNode.at("/url").toString();
         String urll = gurll.substring(1, (gurll.length() - 1));
-        System.out.println(urll);
         return urll;
 
 
@@ -105,7 +100,6 @@ public class ImageOfTheDay {
 
         String urlToday  = rootNodee.at("/url").toString();
         String urll = urlToday.substring(1, (urlToday.length() - 1));
-        System.out.println(urll);
         return urll;
 
 
@@ -134,7 +128,6 @@ public class ImageOfTheDay {
 
         String urlYesterday=  rootNodee.at("/url").toString();
         String urll = urlYesterday.substring(1, (urlYesterday.length() - 1));
-        System.out.println(urll);
 
 
 
