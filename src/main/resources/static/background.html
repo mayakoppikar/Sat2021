@@ -18,11 +18,6 @@
     <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
     <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
 
-    <div>
-        <button class="buttonsnav">
-            <a href="/login">Image Of The Day</a>
-        </button>
-    </div>
 
     <div>
         <button class="buttonsnav">
@@ -84,7 +79,7 @@
         <div class="jumb">
 
             <p><strong class="titles">What are the keplerian elements?</strong> Orbital elements are the parameters required to uniquely identify a specific orbit. In celestial mechanics these elements are considered in two-body systems using a Kepler orbit.</p>
-                <h6><strong>Keplerian Elements:</strong></h6>
+            <h6><strong>Keplerian Elements:</strong></h6>
             <ul>
                 <li><strong>Epoch Time-</strong>A timestamp at which to measure when the orbital elements were recorded.</li>
                 <li><strong>Orbital Inclination-</strong>Inclination is the angle of the orbit in relation to Earth's equator.</li>
@@ -102,80 +97,80 @@
 
 
 
-<div class="container">
-<div>
-    <h4>Equations: </h4>
-</div>
-    <table style="width:100%">
-        <tr class="bor">
-            <th class="bor">Equation</th>
-            <th class="bor">Objective</th>
-        </tr>
-        <tr class="bor">
-            <td class="bor">a = (∛μ)/((2πn/86400)^2/3)</td>
-            <td class="bor">This equation can be used to find the semi-major axis length of the satellite's orbit. Variables: μ is a constant which equals 3.986004418 * 10^14, n equals the satellite's mean motion in rev/day.</td>
-        </tr>
-        <tr class="bor">
-            <td class="bor">p = a - a(e^2)</td>
-            <td class="bor">This equation can be used to find the satellites p-value, the distance from the focus(Earth) to the ellipse's diretrix line. Variables: a is the semi-major axis length, e is the eccentricity.</td>
-        </tr>
-        <tr class="bor hlights">
-            <td class="bor hlights">IF ECCENTRICITY IS BETWEEN 0 & 1:</td>
-            <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
-        </tr>
+    <div class="container">
+        <div>
+            <h4>Equations: </h4>
+        </div>
+        <table style="width:100%">
+            <tr class="bor">
+                <th class="bor">Equation</th>
+                <th class="bor">Objective</th>
+            </tr>
+            <tr class="bor">
+                <td class="bor">a = (∛μ)/((2πn/86400)^2/3)</td>
+                <td class="bor">This equation can be used to find the semi-major axis length of the satellite's orbit. Variables: μ is a constant which equals 3.986004418 * 10^14, n equals the satellite's mean motion in rev/day.</td>
+            </tr>
+            <tr class="bor">
+                <td class="bor">p = a - a(e^2)</td>
+                <td class="bor">This equation can be used to find the satellites p-value, the distance from the focus(Earth) to the ellipse's diretrix line. Variables: a is the semi-major axis length, e is the eccentricity.</td>
+            </tr>
+            <tr class="bor hlights">
+                <td class="bor hlights">IF ECCENTRICITY IS BETWEEN 0 & 1:</td>
+                <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
+            </tr>
 
-        <tr class="bor">
-            <td class="bor"> h = (p(e^2))/(1-(e^2))</td>
-            <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value, e is the eccentricity.</td>
-        </tr>
-        <tr class="bor">
-            <td class="bor">b = (ep)/(√1 - (e^2))</td>
-            <td class="bor">The b-value of the satellite's orbit is also called the semi-minor axis. Variables: e is the eccentricity, p is the p-value.</td>
-        </tr>
+            <tr class="bor">
+                <td class="bor"> h = (p(e^2))/(1-(e^2))</td>
+                <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value, e is the eccentricity.</td>
+            </tr>
+            <tr class="bor">
+                <td class="bor">b = (ep)/(√1 - (e^2))</td>
+                <td class="bor">The b-value of the satellite's orbit is also called the semi-minor axis. Variables: e is the eccentricity, p is the p-value.</td>
+            </tr>
 
-        <tr class="bor hlights">
-            <td class="bor hlights">IF ECCENTRICITY IS 1:</td>
-            <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
-        </tr>
+            <tr class="bor hlights">
+                <td class="bor hlights">IF ECCENTRICITY IS 1:</td>
+                <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
+            </tr>
 
-        <tr class="bor">
-            <td class="bor"> h = -p/2</td>
-            <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value.</td>
-        </tr>
-        <tr class="bor hlights">
-            <td class="bor hlights">IF ECCENTRICITY IS ABOVE 1:</td>
-            <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
-        </tr>
+            <tr class="bor">
+                <td class="bor"> h = -p/2</td>
+                <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value.</td>
+            </tr>
+            <tr class="bor hlights">
+                <td class="bor hlights">IF ECCENTRICITY IS ABOVE 1:</td>
+                <td class="bor hlights">--------------------------------------------------------------------------------------------------------------------------------------------</td>
+            </tr>
 
-        <tr class="bor">
-            <td class="bor"> h = (p(e^2))/(1-(e^2))</td>
-            <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value, e is the eccentricity.</td>
-        </tr>
-        <tr class="bor">
-            <td class="bor">b = (ep)/(√(e^2) -1)</td>
-            <td class="bor">The b-value of the satellite's orbit is also called the semi-minor axis. Variables: e is the eccentricity, p is the p-value.</td>
-        </tr>
+            <tr class="bor">
+                <td class="bor"> h = (p(e^2))/(1-(e^2))</td>
+                <td class="bor">This equation can be used to find the height value(h), of the satellite. Variables: p is the p-value, e is the eccentricity.</td>
+            </tr>
+            <tr class="bor">
+                <td class="bor">b = (ep)/(√(e^2) -1)</td>
+                <td class="bor">The b-value of the satellite's orbit is also called the semi-minor axis. Variables: e is the eccentricity, p is the p-value.</td>
+            </tr>
 
 
-        <tr class="bor">
-            <td class="bor"> r = (ep)/(1-cosθ)</td>
-            <td class="bor">This equation can be used to find the radius from the center of the Earth to the satellite. The variables: e is the eccentricity, p is the p-value, θ is the angle between the satellite and perigee.</td>
-        </tr>
-        <tr class="bor">
-            <td class="bor"> v = √(G - M((2/r) - (1/a))</td>
-            <td class="bor">This equation can be used to find the satellite's velocity at a given radius. The r value is the radius, a is the semi-major axis length, M is the Earth's mass, and G is a gravitational constant. G = .0000000000667</td>
-        </tr>
-        <tr class="bor">
-            <td class="bor">A = a(1 + e)</td>
-            <td class="bor">This equation will find the A value which equals the distance from the center of the Earth to the apogee. Variables: a is the semi-major axis length, e is the eccentricity.</td>
-        </tr>
-        <tr class="bor">
-            <td class="bor">P = a(1 - e)</td>
-            <td class="bor">This equation will find the P value which equals the distance from the center of the Earth to the perigee. Variables: a is the semi-major axis length, e is the eccentricity.</td>
-        </tr>
-    </table>
+            <tr class="bor">
+                <td class="bor"> r = (ep)/(1-cosθ)</td>
+                <td class="bor">This equation can be used to find the radius from the center of the Earth to the satellite. The variables: e is the eccentricity, p is the p-value, θ is the angle between the satellite and perigee.</td>
+            </tr>
+            <tr class="bor">
+                <td class="bor"> v = √(G - M((2/r) - (1/a))</td>
+                <td class="bor">This equation can be used to find the satellite's velocity at a given radius. The r value is the radius, a is the semi-major axis length, M is the Earth's mass, and G is a gravitational constant. G = .0000000000667</td>
+            </tr>
+            <tr class="bor">
+                <td class="bor">A = a(1 + e)</td>
+                <td class="bor">This equation will find the A value which equals the distance from the center of the Earth to the apogee. Variables: a is the semi-major axis length, e is the eccentricity.</td>
+            </tr>
+            <tr class="bor">
+                <td class="bor">P = a(1 - e)</td>
+                <td class="bor">This equation will find the P value which equals the distance from the center of the Earth to the perigee. Variables: a is the semi-major axis length, e is the eccentricity.</td>
+            </tr>
+        </table>
 
-</div>
+    </div>
 
 </div>
 <!-- links -->

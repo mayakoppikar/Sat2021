@@ -160,18 +160,12 @@ public static double findRadius(double a, double e, double theta){
 
 public static double distanceSatellite (double x1, double x2, double y1, double y2, double z1, double z2){
         double ptone = Math.pow((x2-x1), 2);
-        double pttwo = Math.pow((y2-y2), 2);
-        double ptthree = Math.pow((z2-z2), 2);
+        double pttwo = Math.pow((y2-y1), 2);
+        double ptthree = Math.pow((z2-z1), 2);
         double add = ptone + pttwo + ptthree;
         double fina = Math.sqrt(add);
         return fina;
 }
-
-
-
-
-
-
 
 
 public static double getx(double r, double vpo, double i) {
@@ -193,8 +187,6 @@ public static double gety(double r, double vpo, double i) {
 
         return Z;
     }
-
-
 
 public static String getCoordinate(double x, double y, double z){
     DecimalFormat d = new DecimalFormat("#####.###");
@@ -223,93 +215,10 @@ public static double findOrbitalPeriod(double meanmot){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //GETTERS AND SETTERS
-    public int getSatelliteId() {
-        return satelliteId;
-    }
-
-    public void setSatelliteId(int satelliteId) {
-        this.satelliteId = satelliteId;
-    }
-
-    public String getSatelliteName() {
-        return satelliteName;
-    }
-
-    public void setSatelliteName(String satelliteName) {
-        this.satelliteName = satelliteName;
-    }
-
-
-
-    public double getEpoch() {
-        return epoch;
-    }
-
-    public void setEpoch(double epoch) {
-        this.epoch = epoch;
-    }
-
-    public double getRevolutionNumberAtEpoch() {
-        return revolutionNumberAtEpoch;
-    }
-
-    public void setRevolutionNumberAtEpoch(double revolutionNumberAtEpoch) {
-        this.revolutionNumberAtEpoch = revolutionNumberAtEpoch;
-    }
-
-    public double getMeanMotion() {
-        return meanMotion;
-    }
 
     public void setMeanMotion(double meanMotion) {
         this.meanMotion = meanMotion;
-    }
-
-    public double getMeanAnomaly() {
-        return meanAnomaly;
-    }
-
-    public void setMeanAnomaly(double meanAnomaly) {
-        this.meanAnomaly = meanAnomaly;
-    }
-
-    public double getArgumentOfPerigee() {
-        return argumentOfPerigee;
-    }
-
-    public void setArgumentOfPerigee(double argumentOfPerigee) {
-        this.argumentOfPerigee = argumentOfPerigee;
     }
 
     public double getEccentricity() {
@@ -328,76 +237,11 @@ public static double findOrbitalPeriod(double meanmot){
         this.inclination = inclination;
     }
 
-    public double getRightAscension() {
-        return rightAscension;
-    }
-
-    public void setRightAscension(double rightAscension) {
-        this.rightAscension = rightAscension;
-    }
-
-    public double getDragTerm() {
-        return dragTerm;
-    }
-
-    public double getElementNumber() {
-        return elementNumber;
-    }
-
-    public void setElementNumber(double elementNumber) {
-        this.elementNumber = elementNumber;
-    }
-
-    public double getEphemerisNumber() {
-        return ephemerisNumber;
-    }
-
-    public void setEphemerisNumber(double ephemerisNumber) {
-        this.ephemerisNumber = ephemerisNumber;
-    }
-
-    public void setDragTerm(double dragTerm) {
-        this.dragTerm = dragTerm;
-    }
-
-    public double getDerOneBallisticCoefficient() {
-        return derOneBallisticCoefficient;
-    }
-
-    public void setDerOneBallisticCoefficient(double derOneBallisticCoefficient) {
-        this.derOneBallisticCoefficient = derOneBallisticCoefficient;
-    }
-
-    public double getSemiMajorAxisA() {
-        return semiMajorAxisA;
-    }
-
-    public void setSemiMajorAxisA(double semiMajorAxisA) {
-        this.semiMajorAxisA = semiMajorAxisA;
-    }
-
-    public double getpValue() {
-        return pValue;
-    }
-
     public void setpValue(double pValue) {
         this.pValue = pValue;
-    }
-
-    public double getHeightHValue() {
-        return heightHValue;
-    }
-
-    public void setHeightHValue(double heightHValue) {
-        this.heightHValue = heightHValue;
-    }
-
-    public double getbValue() {
-        return bValue;
     }
 
     public void setbValue(double bValue) {
         this.bValue = bValue;
     }
-
 }

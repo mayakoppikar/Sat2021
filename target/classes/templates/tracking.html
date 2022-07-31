@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+
+    <title>Satellites | Tracking</title>
+</head>
+
+<body id="backy">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+
+
+</nav>
+
+<div class="container">
+    <h3 style="margin-top:20px;">Satellite Live Tracking</h3>
+
+    <p>Satellite distances...checked every hour. These satellites are getting closer to one another for at least a period of 4 hours ahead of when the last running.</p>
+</div>
+
+<script>
+    function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+</script>
+
+<div class="container">
+<!-- Tab links -->
+<div class="tab">
+    <button style="text-decoration: underline;" class="tablinks" id="tabuno" onclick="openCity(event, 'LEO')">Low Earth Orbit (LEO)</button>
+    <button style="text-decoration: underline;" class="tablinks" id="tabdos" onclick="openCity(event, 'MEO')">Middle Earth Orbit (MEO)</button>
+    <button style="text-decoration: underline;" class="tablinks" id="tabtres" onclick="openCity(event, 'GEO')">High Earth Orbit (GEO)</button>
+</div>
+
+<!-- Tab content -->
+<div id="LEO" class="tabcontent">
+    <h3>Low Earth Orbit (LEO)</h3>
+   <table style="width:100%;">
+       <tr>
+           <th>Distance (km)</th>
+           <th>Satellite One Name</th>
+           <th>Satellite Two Name</th>
+       </tr>
+       <tr th:each="LEO: ${LEO}">
+           <td th:text="${LEO.dist}" />
+           <td th:text="${LEO.sonename}" />
+           <td th:text="${LEO.stwoname}" />
+       </tr>
+   </table>
+</div>
+
+<div id="MEO" class="tabcontent">
+    <h3>Middle Earth Orbit (MEO)</h3>
+    <table style="width:100%;">
+        <tr>
+            <th>Distance (km)</th>
+            <th>Satellite One Name</th>
+            <th>Satellite Two Name</th>
+        </tr>
+        <tr th:each="MEO: ${MEO}">
+            <td th:text="${MEO.dist}" />
+            <td th:text="${MEO.sonename}" />
+            <td th:text="${MEO.stwoname}" />
+        </tr>
+    </table>
+</div>
+
+<div id="GEO" class="tabcontent">
+    <h3>High Earth Orbit (GEO)</h3>
+    <table style="width:100%;">
+        <tr>
+            <th>Distance (km)</th>
+            <th>Satellite One Name</th>
+            <th>Satellite Two Name</th>
+        </tr>
+        <tr th:each="GEO: ${GEO}">
+            <td th:text="${GEO.dist}" />
+            <td th:text="${GEO.sonename}" />
+            <td th:text="${GEO.stwoname}" />
+        </tr>
+    </table>
+</div>
+
+</div>
+
+</body>
+</html>

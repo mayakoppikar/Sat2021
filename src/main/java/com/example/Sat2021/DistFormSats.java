@@ -11,27 +11,4 @@ public class DistFormSats {
         this.stwoname = stwoname;
     }
 
-    public String getDist() {
-        return dist;
-    }
-
-    public void setDist(String dist) {
-        this.dist = dist;
-    }
-
-    public String getSonename() {
-        return sonename;
-    }
-
-    public void setSonename(String sonename) {
-        this.sonename = sonename;
-    }
-
-    public String getStwoname() {
-        return stwoname;
-    }
-
-    public void setStwoname(String stwoname) {
-        this.stwoname = stwoname;
-    }
 }

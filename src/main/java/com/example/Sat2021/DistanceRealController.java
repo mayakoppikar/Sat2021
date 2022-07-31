@@ -67,24 +67,8 @@ public class DistanceRealController {
             double raanst = Double.parseDouble(raant);
 
             double semimajoraxisa = com.example.Sat2021.Satellites.findSemiMajorAxisA(meanmotion);
-            double pvalue = com.example.Sat2021.Satellites.findPvalue(semimajoraxisa, eccentricity);
-
-            double perigee = com.example.Sat2021.Satellites.findPdistEarthToPerigee(semimajoraxisa, eccentricity);
-            double apogee = com.example.Sat2021.Satellites.findAdistEarthToApogee(semimajoraxisa, eccentricity);
-
-            double apogeev = com.example.Sat2021.Satellites.findVatApogee(apogee, semimajoraxisa);
-            double perigeev = com.example.Sat2021.Satellites.findVatPerigee(perigee, semimajoraxisa);
 
             double semimajoraxisat = com.example.Sat2021.Satellites.findSemiMajorAxisA(meanmotiont);
-            double pvaluet = com.example.Sat2021.Satellites.findPvalue(semimajoraxisat, eccentricityt);
-
-
-
-            double perigeet = com.example.Sat2021.Satellites.findPdistEarthToPerigee(semimajoraxisat, eccentricityt);
-            double apogeet = com.example.Sat2021.Satellites.findAdistEarthToApogee(semimajoraxisat, eccentricityt);
-
-            double apogeevt = com.example.Sat2021.Satellites.findVatApogee(apogeet, semimajoraxisat);
-            double perigeevt = com.example.Sat2021.Satellites.findVatPerigee(perigeet, semimajoraxisat);
 
 //find mean anomaly
             double meananomhourahead = (meananomaly/57.3);
@@ -162,7 +146,7 @@ public class DistanceRealController {
 
 
 
-                double meant = Double.parseDouble(meanmott);
+
                 double altt = com.example.Sat2021.Satellites.findAdistEarthToApogee(com.example.Sat2021.Satellites.findSemiMajorAxisA(Double.parseDouble(meanmott)), Double.parseDouble(eccentricityt));
                 String altit = String.valueOf(altt);
 

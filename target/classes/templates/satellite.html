@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clipart.info/images/ccovers/1559839401black-star-png-10.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Satellites | Data</title>
+</head>
+<body id="backy">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRL0GHfo_JPhu5qbZbhq9jHtjtWSrOtH5lHjw&usqp=CAU" height="30px" width="30px"></a>
+    <a class="navbar-brand" href="/mainpage.html">Satellites!</a>
+
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/satlibrary">Satellites </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/tracking">Tracking </a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/background.html">Background Info</a>
+        </button>
+    </div>
+
+    <div>
+        <button class="buttonsnav">
+            <a href="/calculations.html">Calculations</a>
+        </button>
+    </div>
+
+
+</nav>
+
+<div class="container">
+    <div>
+
+    </div>
+
+
+</div>
+
+
+<div class="container">
+    <h2 id="satsdats">Satellite Data:</h2>
+    <p>Select a satellite Id collected from real-time NASA/Celestrak data.</p>
+</div>
+
+
+<form th:action="@{/satellites}" th:object="${satelliteForm}" method="post">
+
+    <label for="satellitechoice" class="rightytighty" id="form">Select a Satellite:</label>
+    <select id="satellitechoice" name="satellitechoice">
+        <option value="0" th:text="${id0}"></option>
+        <option value="4" th:text="${id4}"></option>
+        <option value="8" th:text="${id8}"></option>
+        <option value="12" th:text="${id12}"></option>
+        <option value="16" th:text="${id16}"></option>
+        <option value="20" th:text="${id20}"></option>
+        <option value="24" th:text="${id24}"></option>
+        <option value="28" th:text="${id28}"></option>
+        <option value="32" th:text="${id32}"></option>
+        <option value="36" th:text="${id36}"></option>
+        <option value="40" th:text="${id40}"></option>
+        <option value="44" th:text="${id44}"></option>
+        <option value="48" th:text="${id48}"></option>
+        <option value="52" th:text="${id52}"></option>
+        <option value="56" th:text="${id56}"></option>
+        <option value="60" th:text="${id60}"></option>
+        <option value="64" th:text="${id64}"></option>
+        <option value="68" th:text="${id68}"></option>
+        <option value="72" th:text="${id72}"></option>
+        <option value="76" th:text="${id76}"></option>
+    </select>
+    <p id="subsub"> <input type="submit" value="submit"/></p>
+</form>
+
+
+
+</body>
+</html>
