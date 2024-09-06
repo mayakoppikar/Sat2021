@@ -29,7 +29,7 @@ public class SatLibrary{
         JsonNode rootNode = objectMapper.readTree(urlConnection.getInputStream());
         Iterator<JsonNode> albums = rootNode.iterator();
         ArrayList<com.example.Sat2021.sat> sats = new ArrayList<com.example.Sat2021.sat>();
-//    while(albums.hasNext()){
+    while(albums.hasNext()){
         while(albums.hasNext()  && (sats.size() <= 300)){
 
             JsonNode album = albums.next();
